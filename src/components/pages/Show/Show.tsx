@@ -1,24 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { thunkGetShowById } from 'src/thunks/show.thunk';
 import { MatchProps } from 'src/types/global.types';
 import { useDispatch, useSelector } from 'react-redux';
 import { getShow } from 'src/selectors/show.selectors';
 
-const Show = ({ match }: MatchProps) => {
-  const { id, name, summary, image } = useSelector(getShow);
+const Show = ({ match: {params} }: MatchProps) => {
   const dispatch = useDispatch();
+  const { id, name, summary, image } = useSelector(getShow);
 
   useEffect(() => {
-    if (!id) {
-      dispatch(thunkGetShowById(match.params.id));
+    if (!id && params.id) {
+      dispatch(thunkGetShowById(params.id));
     }
-  }, [dispatch, match.params.id, id]);
+  }, [dispatch, params.id, id]);
 
   return (
     <div>
-        {name}
-        {summary}
-        {image.medium}
+      {id && (
+        <Fragment>
+          {name}
+          {summary}
+          {image.medium}
+        </Fragment>
+      )}
     </div>
   );
 };
