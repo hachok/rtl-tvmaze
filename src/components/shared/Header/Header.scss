@@ -1,0 +1,10 @@
+@import '../../../styles/variables';
+
+.header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: $grid__bp-md*1px) {
+    flex-wrap: wrap;
+  }
+}
