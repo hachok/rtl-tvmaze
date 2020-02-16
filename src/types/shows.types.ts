@@ -1,11 +1,11 @@
 // constants
-export const GET_SHOWS = 'GET_SHOW';
+export const GET_SHOW = 'GET_SHOW';
 export const GET_EPISODES = 'GET_EPISODES';
 
 // actions types
 interface GetShowByIdAction {
-  type: typeof GET_SHOWS;
-  payload: IShow[];
+  type: typeof GET_SHOW;
+  payload: IShow;
 }
 interface GetEpisodesByIdAction {
   type: typeof GET_EPISODES;
@@ -16,7 +16,7 @@ export type ShowsActionTypes = GetShowByIdAction | GetEpisodesByIdAction;
 
 // interfaces
 export interface IShow {
-  title: string;
+  name: string;
   summary: string;
   episodes: IEpisode[];
 }

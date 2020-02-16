@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import logo from '../logo.svg';
 import './App.scss';
-import { thunkGetShowsById } from 'src/thunks/shows.thunk';
+import { thunkGetShowById } from 'src/thunks/shows.thunk';
 import { useDispatch } from 'react-redux';
 
 const App = () => {
   const dispatch = useDispatch();
+  // 'id' should be as variable with list of shows
   const id = '6771';
 
   useEffect(() => {
-    dispatch(thunkGetShowsById(id));
+    dispatch(thunkGetShowById(id));
   }, [dispatch, id]);
 
   return (

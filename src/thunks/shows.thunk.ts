@@ -1,13 +1,13 @@
 import {IEpisode, IShow} from 'src/types/shows.types';
-import {loadEpisodesById, loadShowsById} from 'src/services/shows.service';
-import {getEpisodes, getShows} from 'src/actions/shows.actions';
+import {loadEpisodesById, loadShowById} from 'src/services/shows.service';
+import {getEpisodes, getShow} from 'src/actions/shows.actions';
 import {AppThunk} from 'src/types/global.types';
 
-export const thunkGetShowsById = (
+export const thunkGetShowById = (
   id: string,
 ): AppThunk => async (dispatch) => {
-  const asyncResp: IShow[] = await loadShowsById(id);
-  dispatch(getShows(asyncResp));
+  const asyncResp: IShow = await loadShowById(id);
+  dispatch(getShow(asyncResp));
 };
 
 export const thunkGetEpisodesById = (

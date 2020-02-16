@@ -1,25 +1,19 @@
-import { GET_SHOWS, IShow, ShowsActionTypes } from 'src/types/shows.types';
+import { GET_SHOW, IShow, ShowsActionTypes } from 'src/types/shows.types';
 
-export interface IShowsState {
-  readonly list: IShow[];
-  readonly selected: IShow;
-}
+export type IShowState = IShow;
 
 const initialState = {
-  list: [],
-  selected: {
-    title: '',
-    summary: '',
-    episodes: [],
-  },
+  name: '',
+  summary: '',
+  episodes: [],
 };
 
 export const showsReducer = (
-  state: IShowsState = initialState,
+  state: IShowState = initialState,
   action: ShowsActionTypes,
-): IShowsState => {
+): IShowState => {
   switch (action.type) {
-    case GET_SHOWS:
+    case GET_SHOW:
       return { ...state, ...action.payload };
     default:
       return state;
