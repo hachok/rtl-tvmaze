@@ -18,10 +18,12 @@ export type ShowsActionTypes = GetShowByIdAction | GetEpisodesByIdAction;
 export interface IShow {
   name: string;
   summary: string;
+  image: string;
   episodes: IEpisode[];
 }
 
 export interface IEpisode {
   title: string;
   summary: string;
+  image: string;
 }

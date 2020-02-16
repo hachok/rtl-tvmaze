@@ -1,10 +1,11 @@
-import { GET_SHOW, IShow, ShowsActionTypes } from 'src/types/shows.types';
+import {GET_EPISODES, GET_SHOW, IShow, ShowsActionTypes} from 'src/types/shows.types';
 
 export type IShowState = IShow;
 
 const initialState = {
   name: '',
   summary: '',
+  image: '',
   episodes: [],
 };
 
@@ -15,6 +16,8 @@ export const showsReducer = (
   switch (action.type) {
     case GET_SHOW:
       return { ...state, ...action.payload };
+    case GET_EPISODES:
+      return { ...state, episodes: action.payload };
     default:
       return state;
   }
