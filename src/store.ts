@@ -2,7 +2,7 @@ import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import reducers, { IRootState } from 'src/reducers';
 import thunk, {ThunkMiddleware} from 'redux-thunk';
-import {ShowsActionTypes} from 'src/types/shows.types';
+import {ShowsActionTypes} from 'src/types/show.types';
 
 export type Actions = ShowsActionTypes;
 

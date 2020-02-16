@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
-import { IShow } from 'src/types/shows.types';
-import { showsReducer } from 'src/reducers/shows.reducer';
+import { IShow } from 'src/types/show.types';
+import { showReducer } from 'src/reducers/show.reducer';
 
 export interface IRootState {
   show: IShow;
 }
 
 const reducers = combineReducers<IRootState>({
-  show: showsReducer,
+  show: showReducer,
 });
 
 export default reducers;

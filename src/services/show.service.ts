@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 import { httpConfig } from 'src/utils/http';
-import {IEpisode, IShow} from 'src/types/shows.types';
+import {IEpisode, IShow} from 'src/types/show.types';
 import {API_URL} from 'src/constants';
 
 export const loadShowById = (id: string): Promise<IShow> =>

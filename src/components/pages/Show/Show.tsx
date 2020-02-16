@@ -1,16 +1,26 @@
 import React, { useEffect } from 'react';
-import { thunkGetShowById } from 'src/thunks/shows.thunk';
-import { useDispatch } from 'react-redux';
-import { DEFAULT_SHOW_ID } from 'src/constants';
+import { thunkGetShowById } from 'src/thunks/show.thunk';
 import { MatchProps } from 'src/types/global.types';
+import { useDispatch, useSelector } from 'react-redux';
+import { getShow } from 'src/selectors/show.selectors';
 
 const Show = ({ match }: MatchProps) => {
+  const { id, name, summary, image } = useSelector(getShow);
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(thunkGetShowById(match.params.id || DEFAULT_SHOW_ID));
-  }, [dispatch, match.params.id]);
 
-  return <div className="App">show page</div>;
+  useEffect(() => {
+    if (!id) {
+      dispatch(thunkGetShowById(match.params.id));
+    }
+  }, [dispatch, match.params.id, id]);
+
+  return (
+    <div>
+        {name}
+        {summary}
+        {image.medium}
+    </div>
+  );
 };
 
 export default Show;

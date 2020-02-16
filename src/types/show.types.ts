@@ -19,8 +19,13 @@ export interface IShow {
   id: string;
   name: string;
   summary: string;
-  image: string;
+  image: IShowImage;
   episodes: IEpisode[];
+}
+
+interface IShowImage {
+  medium: string;
+  original: string;
 }
 
 export interface IEpisode {

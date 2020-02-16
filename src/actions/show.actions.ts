@@ -4,7 +4,7 @@ import {
   IEpisode,
   IShow,
   ShowsActionTypes,
-} from 'src/types/shows.types';
+} from 'src/types/show.types';
 
 // TypeScript infers that this function is returning SendMessageAction
 export const setShow = (show: IShow): ShowsActionTypes => {

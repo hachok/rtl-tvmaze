@@ -1,16 +1,19 @@
-import {SET_EPISODES, SET_SHOW, IShow, ShowsActionTypes} from 'src/types/shows.types';
+import { SET_EPISODES, SET_SHOW, IShow, ShowsActionTypes } from 'src/types/show.types';
 
 export type IShowState = IShow;
 
-const initialState = {
+const initialState: IShowState = {
   id: '',
   name: '',
   summary: '',
-  image: '',
+  image: {
+    medium: '',
+    original: '',
+  },
   episodes: [],
 };
 
-export const showsReducer = (
+export const showReducer = (
   state: IShowState = initialState,
   action: ShowsActionTypes,
 ): IShowState => {

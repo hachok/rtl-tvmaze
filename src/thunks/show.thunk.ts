@@ -1,6 +1,6 @@
-import {IEpisode, IShow} from 'src/types/shows.types';
-import {loadEpisodesById, loadShowById} from 'src/services/shows.service';
-import {setEpisodes, setShow} from 'src/actions/shows.actions';
+import {IEpisode, IShow} from 'src/types/show.types';
+import {loadEpisodesById, loadShowById} from 'src/services/show.service';
+import {setEpisodes, setShow} from 'src/actions/show.actions';
 import {AppThunk} from 'src/types/global.types';
 
 export const thunkGetShowById = (
