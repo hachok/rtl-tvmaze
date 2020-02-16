@@ -1,34 +1,19 @@
-import React, { useEffect } from 'react';
-import logo from '../logo.svg';
+import React from 'react';
 import './App.scss';
-import { thunkGetShowById } from 'src/thunks/shows.thunk';
-import { useDispatch } from 'react-redux';
+import { Redirect, Route, Switch } from 'react-router';
+import {DEFAULT_SHOW_ID} from 'src/constants';
+import Show from 'src/components/pages/Show/Show';
+import Episodes from 'src/components/pages/Episodes/Episodes';
 
 const App = () => {
-  const dispatch = useDispatch();
-  // 'id' should be as variable with list of shows
-  const id = '6771';
-
-  useEffect(() => {
-    dispatch(thunkGetShowById(id));
-  }, [dispatch, id]);
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Redirect exact path="/" to={`/show/${DEFAULT_SHOW_ID}`} />
+        <Route exact path="/show/:id" component={Show} />
+        <Route exact path="/show/:id/episodes" component={Episodes} />
+        <Redirect path="*" to="/" />
+      </Switch>
     </div>
   );
 };

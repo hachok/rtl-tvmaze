@@ -1,18 +1,18 @@
 // constants
-export const GET_SHOW = 'GET_SHOW';
-export const GET_EPISODES = 'GET_EPISODES';
+export const SET_SHOW = 'SET_SHOW';
+export const SET_EPISODES = 'SET_EPISODES';
 
 // actions types
-interface GetShowByIdAction {
-  type: typeof GET_SHOW;
+interface SetShowByIdAction {
+  type: typeof SET_SHOW;
   payload: IShow;
 }
-interface GetEpisodesByIdAction {
-  type: typeof GET_EPISODES;
+interface SetEpisodesByIdAction {
+  type: typeof SET_EPISODES;
   payload: IEpisode[];
 }
 
-export type ShowsActionTypes = GetShowByIdAction | GetEpisodesByIdAction;
+export type ShowsActionTypes = SetShowByIdAction | SetEpisodesByIdAction;
 
 // interfaces
 export interface IShow {
