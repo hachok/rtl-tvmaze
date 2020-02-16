@@ -30,7 +30,8 @@ interface IShowImage {
 
 export interface IEpisode {
   id: string;
-  title: string;
+  name: string;
   summary: string;
-  image: string;
+  image: IShowImage;
+  url: string;
 }
