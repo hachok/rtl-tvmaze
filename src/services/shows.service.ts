@@ -4,6 +4,7 @@ import { httpConfig } from 'src/utils/http';
 import { IShow } from 'src/types/shows.types';
 
 export const loadShowsById = (id: string): Promise<IShow[]> =>
-  axios
-    .get(`${API_URL}/search/people?q=${id}`, httpConfig())
-    .then((res: AxiosResponse) => res.data);
+  axios.get(`${API_URL}/shows/${id}`, httpConfig()).then((res: AxiosResponse) => res.data);
+
+export const loadEpisodesById = (id: string): Promise<IShow[]> =>
+  axios.get(`${API_URL}/shows/${id}/episodes`, httpConfig()).then((res: AxiosResponse) => res.data);

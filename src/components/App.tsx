@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../logo.svg';
 import './App.scss';
+import { thunkGetShowsById } from 'src/thunks/shows.thunk';
+import { useDispatch } from 'react-redux';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  const id = '6771';
+
+  useEffect(() => {
+    dispatch(thunkGetShowsById(id));
+  }, [dispatch, id]);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +30,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
