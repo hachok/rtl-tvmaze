@@ -16,6 +16,7 @@ export type ShowsActionTypes = SetShowByIdAction | SetEpisodesByIdAction;
 
 // interfaces
 export interface IShow {
+  id: string;
   name: string;
   summary: string;
   image: string;
@@ -23,6 +24,7 @@ export interface IShow {
 }
 
 export interface IEpisode {
+  id: string;
   title: string;
   summary: string;
   image: string;

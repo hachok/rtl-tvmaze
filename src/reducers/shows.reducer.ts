@@ -3,6 +3,7 @@ import {SET_EPISODES, SET_SHOW, IShow, ShowsActionTypes} from 'src/types/shows.t
 export type IShowState = IShow;
 
 const initialState = {
+  id: '',
   name: '',
   summary: '',
   image: '',
