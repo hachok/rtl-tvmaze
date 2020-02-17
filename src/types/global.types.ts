@@ -1,7 +1,7 @@
 import { Action } from 'redux';
 import { IRootState } from 'src/reducers';
 import { ThunkAction } from 'redux-thunk';
-import {RouteComponentProps} from 'react-router';
+import { RouteComponentProps } from 'react-router';
 
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,

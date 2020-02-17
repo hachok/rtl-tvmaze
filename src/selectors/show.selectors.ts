@@ -1,6 +1,6 @@
-import {IRootState} from 'src/reducers';
-import {IShowState} from 'src/reducers/show.reducer';
-import {createSelector} from 'reselect';
+import { IRootState } from 'src/reducers';
+import { IShowState } from 'src/reducers/show.reducer';
+import { createSelector } from 'reselect';
 
 export const getShow = (state: IRootState): IShowState => state.show;
 

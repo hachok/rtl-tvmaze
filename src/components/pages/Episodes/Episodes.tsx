@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import {thunkGetEpisodesById, thunkGetShowById} from 'src/thunks/show.thunk';
+import { thunkGetEpisodesById, thunkGetShowById } from 'src/thunks/show.thunk';
 import { useDispatch, useSelector } from 'react-redux';
 import { MatchProps } from 'src/types/global.types';
-import {getEpisodes, getShow} from 'src/selectors/show.selectors';
+import { getEpisodes, getShow } from 'src/selectors/show.selectors';
 import EpisodeItem from 'src/components/pages/Episodes/EpisodeItem/EpisodeItem';
 import Header from 'src/components/shared/Header/Header';
 
