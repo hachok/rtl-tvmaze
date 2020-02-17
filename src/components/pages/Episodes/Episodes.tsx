@@ -26,8 +26,8 @@ const Episodes = ({ match: { params } }: MatchProps) => {
       <div className="container__row">
         {!!episodes.length &&
           episodes.map((episode) => (
-            <div className="container__col-3">
-              <EpisodeItem key={episode.id} {...episode} />
+            <div key={episode.id} className="container__col-3">
+              <EpisodeItem {...episode} />
             </div>
           ))}
       </div>
