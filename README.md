@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Stack 
+
+* React
+* Typescript
+* Redux(redux-thunk)
+* Reselect
+* Axios
+* SCSS
+
 
 ## Available Scripts
 
